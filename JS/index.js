@@ -1,24 +1,77 @@
-const btnS= document.querySelector(".btnSub");
-const btnR= document.querySelector(".btnRst");
-const bookS= document.querySelector(".book");
-const geneS= document.querySelector(".generies");
+const btnSub= document.querySelector(".btnSub");
+const btnRes= document.querySelector(".btnRst");
+const bookSearch= document.querySelector(".book");
 const main= document.querySelector(".main-container");
+const article = document.createElement("article");
+main.appendChild(article);
 
-btnS.addEventListener("click", function(){
-    const article = document.createElement("article");
-    let loader = document.createTextNode("loading...");
-    article.appendChild(loader);
-    article.classList.add("result");
-    main.appendChild(article);
-    fetch("https://openlibrary.org/search.json?q="+bookS.value)
+   
+
+btnSub.addEventListener("click", search);
+
+function lowerSerch(){
+    return bookSearch.value.toLowerCase().trim();
+}
+
+function search(){
+    clear();
+    let genName= lowerSerch();
+    let urlGen="https://openlibrary.org/subjects/"+ genName +".json?limit=10";
+    createDisplay();
+    fetch(urlGen)
     .then(response => response.json())
     .then(data => {
-        for(let i=0; i<10; i++){;
-        loader.remove();    
-        article.innerHTML+="<h2>Result:</h2>" + "<h3>"+data.docs[i].title+"</h3>"+
-         "<h5>"+data.docs[i].author_name+"</h5>"+"<br><img src='https://covers.openlibrary.org/b/isbn/"+ data.docs[i].isbn[0]+"-M.jpg'><br>"+ "<hr>";
-        console.log(data.docs[i].title);
-        } 
+        removeLoader();
+        console.log(data.works);
+        viewResult(data)
     })
-});
+}
+
+function viewResult(x){
+    article.innerHTML="<h2>Result:</h2>";
+    for(let i=0; i<10; i++){
+    article.innerHTML+="<h2>"+x.works[i].title+"</h2>"+
+    "<p>Author: "+x.works[i].authors[0].name+"</p>"
+    +"<br><img src='https://covers.openlibrary.org/b/id/"
+    + x.works[i].cover_id +"-M.jpg'><br>"+"<button class='btnRead'>Read more</button>"+"<br>"+"<hr>";
+    article.scrollIntoView({behavior: "smooth", block: "start"});
+    }
+}
+
+
+function createDisplay(){
+    article.classList.add("result");
+    if(bookSearch.value === ""){
+        article.innerHTML="<h2>parameter not fount</h2>"
+    }else{
+        let loader = document.createElement("span");
+        loader.classList.add("loader");
+        article.appendChild(loader);
+    }
+}
+
+function removeLoader(){
+    let loader = document.querySelector(".loader");
+    loader.remove();
+}
+
+  function clear(){
+    article.innerHTML="";
+    while(article.firstChild){
+        article.removeChild(article.firstChild);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
