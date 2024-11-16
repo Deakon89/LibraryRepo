@@ -1,6 +1,6 @@
 html{
     font-family: "Nixie One", system-ui;
-    font-weight: 400;
+    font-weight: 800;
     font-style: normal;
     
 }
@@ -97,7 +97,7 @@ em{
 .book{
     grid-column: 1;
     grid-row: 2;
-    width: 100%;
+    width: 98%;
     background-color: rgb(255, 255, 255);
     border-radius: 0.2rem;
     box-shadow:0.2rem 0.2rem 0.5rem rgb(255, 255, 255);
@@ -115,49 +115,38 @@ em{
 
 .btnSub{
     grid-column:1;
-    grid-row: 3;
-    width: 40%;
-    background-color: rgb(221, 0, 0);;
-    border-radius: 0.2rem;
-    box-shadow:0.2rem 0.2rem 0.5rem rgb(255, 255, 255);
-    border: 1px solid white;
-    color: white;
-    font-family: "Nixie One", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    cursor: pointer;
-}
-
-.btnSub:hover{
-    background-color:white ;
-    color: rgb(221, 0, 0);;
-}
-
-.btnRst{
-    grid-column: 1;
-    grid-row: 3;
-    width: 40%;
+    grid-row: 2;
+    width: 22%;
+    z-index: 2;
     justify-self: end;
     background-color: rgb(221, 0, 0);;
     border-radius: 0.2rem;
-    box-shadow:0.2rem 0.2rem 0.5rem rgb(255, 255, 255);
+    box-shadow:0.1rem 0.1rem 0.5rem rgb(255, 255, 255); 
     border: 1px solid white;
     color: white;
     font-family: "Nixie One", system-ui;
     font-weight: 400;
     font-style: normal;
     cursor: pointer;
-} 
+    padding: 0;
+}
 
-.btnRst:hover{
-    background-color:white ;
-    color: rgb(221, 0, 0);;;
+.btnSub i{
+    color: white;
+    font-size: 2rem;
+}
+
+.btnSub:hover{
+    background-color:rgb(250, 107, 107) ;
+    
 }
 
 .btnRead{
     margin: auto;
     width: 40%;
-    background-color: rgb(221, 0, 0);;
+    /* background-color: rgb(221, 0, 0); */
+    background-color: rgba(242, 242, 242, 0);
+    backdrop-filter: blur(2rem);
     border-radius: 0.2rem;
     box-shadow:0.2rem 0.2rem 0.5rem rgb(255, 255, 255);
     border: 1px solid white;
@@ -247,7 +236,29 @@ em{
     100% {
       transform: rotate(360deg);
     }
-  } 
+  }
+
+  .modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.2rem;
+    box-shadow:0.2rem 0.2rem 0.5rem rgb(255, 255, 255);
+    border: 1px solid white;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    z-index: 10;
+    background: linear-gradient(-45deg, rgb(152, 152, 152), rgb(5, 5, 5), rgb(107, 107, 107), rgb(57, 57, 57));
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+    height: 30rem;
+  }
+
+  .card{
+    padding: 2rem;
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
 /* end main content */
 
 /* footer */
@@ -264,6 +275,7 @@ em{
     grid-column: 2;
     grid-row: 3;
     font-size: 0.8rem;
+    margin-top: 1rem;
 }
 .icon{
     grid-column: 2;
@@ -277,6 +289,14 @@ em{
 .site{
     grid-column: 2;
     grid-row: 2;
-    color: white; 
+    color: white;
+    margin-top: 1.5rem; 
+}
+.site a{
+    
+    border-radius: 0.2rem;
+    box-shadow:0.2rem 0.2rem 0.5rem rgb(255, 255, 255);
+    border: 1px solid white;
+    padding: 0.5rem;
 }
 /* endProject */
