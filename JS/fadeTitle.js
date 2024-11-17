@@ -1,5 +1,6 @@
 const splash = document.querySelector(".splash");
 
+
 document.addEventListener("DOMContentLoaded", (e) => {
 
     setTimeout(() => {
@@ -8,4 +9,5 @@ document.addEventListener("DOMContentLoaded", (e) => {
     setTimeout(() => {
         splash.remove();
     }, 2200);
-});
+}); 
+

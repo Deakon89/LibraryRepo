@@ -1,3 +1,4 @@
+/* general settings */
 html{
     font-family: "Nixie One", system-ui;
     font-weight: 800;
@@ -23,9 +24,15 @@ body{
       background-position: 0% 50%;
     }
 }
+/* --- */
+
+/* splash-title display */
 .animatedTitle{
     opacity: 0;
     animation: fade 1s ease-in forwards;
+}
+.animatedTitle img {
+    max-width: 100%;
 }
 
 .fade-out{
@@ -72,6 +79,7 @@ a{
     color: rgb(221, 0, 0);
     text-decoration: none;
 }
+/* --- */
 
 /* title bar */
 .top-container{
@@ -83,12 +91,6 @@ a{
 
 .title{
     grid-column: 2;
-    /* background-color: rgba(242, 242, 242, 0);
-    backdrop-filter: blur(2rem);
-    border-radius: 0.2rem;
-    box-shadow:0.2rem 0.2rem 0.5rem rgb(255, 255, 255);
-    border: 1px solid white;
-    transition: all 0.8s ease-out; */
     margin-top: 2rem;
 }
 .title img{
@@ -188,7 +190,6 @@ em{
 .btnRead{
     margin: auto;
     width: 40%;
-    /* background-color: rgb(221, 0, 0); */
     background-color: rgba(242, 242, 242, 0);
     backdrop-filter: blur(2rem);
     border-radius: 0.2rem;
@@ -201,6 +202,7 @@ em{
     cursor: pointer;
 }
 
+/* inside main article */
 .btnRead:hover{
     background-color:white ;
     color: rgb(221, 0, 0);;
@@ -303,6 +305,8 @@ em{
     padding: 2rem;
     border-bottom: 1px solid rgb(255, 255, 255);
   }
+  /* --- */
+  
 /* end main content */
 
 /* footer */
