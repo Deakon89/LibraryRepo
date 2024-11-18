@@ -1,4 +1,10 @@
 /* general settings */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html{
     font-family: "Nixie One", system-ui;
     font-weight: 800;
@@ -65,7 +71,7 @@ body{
     color: red;
     z-index: 200;
     text-align: center;
-     line-height: 90vh; 
+    line-height: 90vh; 
 }
 
 @keyframes fade {
@@ -216,8 +222,6 @@ em{
     grid-template-columns: 1fr;
     grid-template-rows: 2fr ;
     text-align: center;
-    overflow: hidden;
-    overflow-y: scroll;
     background-color: rgba(242, 242, 242, 0);
     backdrop-filter: blur(2rem);
     border-radius: 0.2rem;
@@ -231,17 +235,11 @@ em{
     margin: auto;
 }
 .result hr{
+    margin-top: 1rem;
     width: 100%;
 }
 
-.result::-webkit-scrollbar{
-    border-radius: 0.2rem;
-    width: 0.5rem;
-    padding: auto;
-}
-.result::-webkit-scrollbar-thumb{
-    color: rgb(200, 250, 255);;
-}
+
 
 .loader {
     margin: auto;
@@ -286,6 +284,7 @@ em{
 
   .modal{
     position: fixed;
+    text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -299,11 +298,30 @@ em{
     background-size: 200% 200%;
     animation: gradient 15s ease infinite;
     height: 30rem;
+    overflow: scroll;
+    max-width: 70%;
   }
+  .modal p{
+    margin-top: 2rem;
+  }
+  .modal::-webkit-scrollbar{
+    border-radius: 0.2rem;
+    width: 0.5rem;
+    padding: auto;
+}
+.modal::-webkit-scrollbar-thumb{
+    color: rgb(200, 250, 255);;
+}
 
   .card{
-    padding: 2rem;
+    padding: 0.5rem;
     border-bottom: 1px solid rgb(255, 255, 255);
+  }
+  .card h2{
+    margin-bottom: 0.5rem;
+  }
+  .card p{
+    margin-top: 0.5rem;
   }
   /* --- */
   

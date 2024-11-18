@@ -1,3 +1,4 @@
+
 // variable and constant html
 const btnSub= document.querySelector(".btnSub");
 const bookSearch= document.querySelector(".book");
@@ -48,11 +49,14 @@ main.appendChild(article);
         if (key === "works") {
           _.forEach(value, (item) => {
             // console.log(item);
+            // creating book card
             const card = document.createElement("div");
             card.classList.add("card");
             article.appendChild(card);
-            card.innerHTML+="<h2>title: "+item.title+"</h2>"+"<p>Author: "+item.authors[0].name+"</p>"
+            // inner card text
+            card.innerHTML+="<h2>"+item.title+"</h2>"+"<p>Author: "+item.authors[0].name+"</p>"
             +"<br><img src='https://covers.openlibrary.org/b/id/"+ item.cover_id +"-M.jpg'><br>";
+            // modal control
             const btnRead = document.createElement("button");
             btnRead.classList.add("btnRead");
             btnRead.innerHTML = "Read more";
@@ -61,6 +65,7 @@ main.appendChild(article);
               openModal();
               searchDescription(item);
             });
+            
             article.scrollIntoView({ behavior: "smooth" });
           });
 
@@ -78,7 +83,7 @@ main.appendChild(article);
         .then(response => response.json())
         .then(data => {
          if(typeof data.description === "string"){
-            //  console.log(data);
+              // console.log(data);
                modal.innerHTML+="<h2>"+data.title+"</h2>"+"<h2>Description:</h2>"+"<p>"+data.description+"</p>"+"<br>";
          }else{
             //  console.log("description not found");
@@ -127,11 +132,16 @@ function clearDisplay(){
     })
   }
 
+  function clearModal(){
+    modal.innerHTML="";
+  }
+
    function openModal(){
+    clearModal();
      modal.classList.add("modal");
-     document.body.appendChild(modal)
+     main.appendChild(modal)
      modal.style.display = "flex";
-     modal.style.flexDirection = "column";
+     modal.style.flexDirection = "column"; 
 
    }
 // end project
