@@ -49,7 +49,7 @@ Web app to search for your favorite book, by genre, developed in JavaScript.
 
 Use is very simple.
 Just write the category of books you want to search for and press the book-shaped button.
-A section will open with books of the genre chosen by you and, with the appropriate Read more button, you can also delve deeper with a small description.
+A section will open with books of the genre chosen by you and, with the appropriate "Read more" button, you can also delve deeper with a small description.
 Some descriptions may contain links to Wikipedia or other sites.
 
 ---
