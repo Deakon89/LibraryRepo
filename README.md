@@ -11,7 +11,7 @@ Web app per cercare il tuo libro preferito, per genere, sviluppato in JavaScript
 ## **Istruzioni d'uso** 
 
 L'utilizzo è molto semplice.
-Basta scrivere la categoria di libri che vuoi cercare e premere il tasto a forma si libro.
+Basta scrivere la categoria di libri che vuoi cercare e premere il tasto a forma di libro.
 Si aprirà una sezione con i libri del genere scelto da te e ,con l'apposito tasto Read more, potrai anche approfondire con una piccola descrizione.
 Qualche descrizione potrebbe contenere link a wikipedia o ad altri siti. 
 
